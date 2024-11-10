@@ -1,0 +1,14 @@
+h1{
+    color: indigo;
+    font-family: Cambria;
+    text-decoration: underline;
+}
+h2{
+    background-color: beige;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: right;
+}
+h3{
+    color: whitesmoke;
+    background-color: palevioletred;
+}
