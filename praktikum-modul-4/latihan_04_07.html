@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fungsi dan Scope pada JavaScript</title>
+</head>
+<body>
+    <script>
+        //fungsi sederhana
+        function tambah(a+b){
+            return a+b;
+        }
+
+        //fungsi sederhana parameter default
+        function greet(nama="pengguna") {
+            console.log("Hallo, "+nama+"!");
+        }
+
+        //fungsi dengan fungsi di dalamnya
+        function outerFunction(){
+            let outerVar = "Variabel luar";
+            function innerFunction(){
+                let innerVar = "Variabel dalam";
+                console.log(outerVar); //akses variabel luar
+                console.log(innerVar); //akses variabel dalam
+            }
+            innerFunction();
+        }
+
+        //memanggil fungsi
+        console.log("Hasil Penjumlahan: "+ tambah(5, 10));
+        greet("John");
+        outerFunction();
+
+        //scope
+        let globalVar = "Variabel Global";
+        function checkScope(){
+            let localVar = "Variabel lokal";
+            console.log(globalVar); //akses variabel global
+            console.log(localVar); //akses variabel lokal
+        }
+        checkScope();
+        //console.log(localVar);
+    </script>
+</body>
+</html>
