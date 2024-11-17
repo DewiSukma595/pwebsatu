@@ -1,0 +1,67 @@
+/* Global Styles */
+body{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+.watermark{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('assets/logo-univ.png') no-repeat center center;
+    background-size: 500px; /* Sesuaikan ukuran logo */
+    opacity: 0.1; /* Tingkat transparansi tinggi */
+    z-index: -1; /* Di belakang konten utama */
+    pointer-events: none; /* Tidak mengganggu interaksi pengguna */
+} 
+header{
+    background: rgb(253, 253, 143);
+    padding: 1rem 0;
+    text-align: center;
+}
+main{
+    padding: 2rem;
+}
+h1, h2{
+    color: #333;
+}
+section{
+    margin-bottom: 2rem;
+}
+.alumni-card{
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+.alumni-card:hover{
+    transform: scale(1.05);
+}
+footer{
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+a{
+    color: #007BFF;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+#search {
+    margin-bottom: 2rem;
+}
+#search-box {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
