@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery Photos Alumni UNIKU</title>
+    <style>
+        header{
+            background-image: url(img/bg-header1.png);
+            height: 200px;
+            position: relative;
+        }
+        .watermark{
+            position: fixed;
+            top: 200px;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('img/logo-univ.png') no-repeat center center;
+            background-size: 500px; /* Sesuaikan ukuran logo */
+            opacity: 0.1; /* Tingkat transparansi tinggi */
+            z-index: -1; /* Di belakang konten utama */
+            pointer-events: none; /* Tidak mengganggu interaksi pengguna */
+        } 
+        footer{
+            padding: 10px;
+            color: white;
+            background-color: rgb(229, 229, 28);
+            text-align: center;
+            font-weight: bold;
+        }
+        .kotak{
+            display: flex;
+        }
+        .kartu{
+            width: 120px; 
+            box-shadow: 0 4px 8px 0; 
+            margin-top: 20px; 
+            margin: 10px;
+        }
+        .modal{
+            display: none; 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            background: rgba(0, 0, 0, 0.5); 
+            justify-content: center; 
+            align-items: center;
+            z-index: 1000; /*memastikan modal di atas konten yang lain */
+        }
+        .modal-content{
+            background: white; 
+            padding: 20px; 
+            border-radius: 5px;
+            max-width: 400px; /* mengatur lebar untuk memunculkan modal */
+            overflow: auto; /* efek scroll jika gambar terlalu besar */
+            position: relative; /* memastikan posisi untuk close button */
+            margin: 100px auto;
+        }
+        .close{
+            cursor: pointer;
+            position: absolute; /* posisi untuk close button */
+            top: 10px; 
+            right: 10px; 
+            font-size: 25px;
+            color: gray;
+        } 
+        img{
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="watermark"></div>
+    <header>
+        <div class="container">
+            <h1>Photo Gallery of Kuningan University <br> 
+                Alumni Class of 2018
+            </h1>
+            <p>Alumni Universitas Kuningan merupakan individu yang berprestasi
+                di berbagai bidang dan telah memberikan kontribusi nyata di masyarakat. 
+            </p>
+        </div>
+    </header>
+
+    <div class="featured">
+        <div class="kotak">
+            <div class="kartu">
+                <div class="img-featured">
+                    <img src="img/photo1.jpeg" alt="Alumni 1">
+                    <p><strong>Mario Khairan Ravindra</strong> <br>
+                        Lulusan 2018 <br>
+                        <i>Fakultas Ilmu Komputer</i>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="kartu">
+            <div class="img-featured">
+                <img src="img/photo2.jpeg" alt="Alumni 2">
+                <p><strong>Giandra Edriel S</strong> <br>
+                    Lulusan 2018 <br>
+                    <i>Fakultas Hukum</i>
+                </p>
+            </div>
+        </div>
+        <div class="kartu">
+            <div class="img-featured">
+                <img src="img/photo3.jpeg" alt="Alumni 3">
+                <p><strong>Theo Albertus Sadiq</strong> <br>
+                    Lulusan 2018 <br>
+                    <i>Fakultas Ekonomi dan Bisnis</i>
+                </p>
+            </div>
+        </div>
+        <div class="kartu">
+            <div class="img-featured">
+                <img src="img/photo4.jpeg" alt="Alumni 4">
+                <p><strong>Kanza Shabil Ardhani</strong> <br>
+                    Lulusan 2018 <br>
+                    <i>Fakultas Ilmu Komputer</i>
+                </p>
+            </div>
+        </div>
+        <div class="kartu">
+            <div class="img-featured">
+                <img src="img/photo5.jpeg" alt="Alumni 5">
+                <p><strong>Nathanael Arista Pratama</strong> <br>
+                    Lulusan 2018 <br>
+                    <i>Fakultas Kehutanan</i>
+                </p>
+            </div>
+        </div>
+        <div class="kartu">
+            <div class="img-featured">
+                <img src="img/photo6.jpeg" alt="Alumni 6">
+                <p><strong>Elvano Devara Mahendra</strong> <br>
+                    Lulusan 2018 <br>
+                    <i>Fakultas Keguruan dan Ilmu Pendidikan</i>
+                </p>
+            </div>
+        </div>
+        <div class="kartu">
+            <div class="img-featured">
+                <img src="img/photo7.jpeg" alt="Alumni 7">
+                <p><strong>Kiandra Elvira Ramadhani</strong> <br>
+                    Lulusan 2018 <br>
+                    <i>Fakultas Ekonomi dan Bisnis</i>
+                </p>
+            </div>
+        </div>
+        <div class="kartu">
+            <div class="img-featured">
+                <img src="img/photo8.jpeg" alt="Alumni 8">
+                <p><strong>Seraphine Ayunda Kalista</strong> <br>
+                    Lulusan 2018 <br>
+                    <i>Fakultas Hukum</i>
+                </p>
+            </div>
+        </div>
+        <div class="kartu">
+            <div class="img-featured">
+                <img src="img/photo9.jpeg" alt="Alumni 9">
+                <p><strong>Cassandra Amara Laksita</strong> <br>
+                    Lulusan 2018 <br>
+                    <i>Fakultas Ilmu Komputer</i>
+                </p>
+            </div>
+        </div>
+        <div class="kartu">
+            <div class="img-featured">
+                <img src="img/photo10.jpeg" alt="Alumni 10">
+                <p><strong>Kayana Akasa Krida</strong> <br>
+                    Lulusan 2018 <br>
+                    <i>Fakultas Hukum</i> 
+                </p>
+            </div>
+        </div>
+        <div class="kartu">
+            <div class="img-featured">
+                <img src="img/photo11.jpeg" alt="Alumni 11">
+                <p><strong>Kaviendra Nandi Kuswara</strong> <br>
+                    Lulusan 2018 <br>
+                    <i>Fakultas Ilmu Komputer</i>
+                </p>
+            </div>
+        </div>
+        <div class="kartu">
+            <div class="img-featured">
+                <img src="img/photo1.jpeg" alt="Alumni 1">
+                <p><strong>Mario Khairan Ravindra</strong> <br>
+                    Lulusan 2018 <br>
+                    <i>Fakultas Ilmu Komputer</i>
+                </p>
+            </div>
+        </div>
+        <div class="kartu">
+            <div class="img-featured">
+                <img src="img/photo2.jpeg" alt="Alumni 2">
+                <p><strong>Giandra Edriel S</strong> <br>
+                    Lulusan 2018 <br>
+                    <i>Fakultas Hukum</i>
+                </p>
+            </div>
+        </div>
+        <div class="kartu">
+            <div class="img-featured">
+                <img src="img/photo3.jpeg" alt="Alumni 3">
+                <p><strong>Theo Albertus Sadiq</strong> <br>
+                    Lulusan 2018 <br>
+                    <i>Fakultas Ekonomi dan Bisnis</i>
+                </p>
+            </div>
+        </div>
+        <div class="kartu">
+            <div class="img-featured">
+                <img src="img/photo4.jpeg" alt="Alumni 4">
+                <p><strong>Kanza Shabil Ardhani</strong> <br>
+                    Lulusan 2018 <br>
+                    <i>Fakultas Ilmu Komputer</i>
+                </p>
+            </div>
+        </div>
+        <div class="kartu">
+            <div class="img-featured">
+                <img src="img/photo5.jpeg" alt="Alumni 5">
+                <p><strong>Nathanael Arista Pratama</strong> <br>
+                    Lulusan 2018 <br>
+                    <i>Fakultas Kehutanan</i>
+                </p>
+            </div>
+        </div>
+        <div class="kartu">
+            <div class="img-featured">
+                <img src="img/photo6.jpeg" alt="Alumni 6">
+                <p><strong>Elvano Devara Mahendra</strong> <br>
+                    Lulusan 2018 <br>
+                    <i>Fakultas Keguruan dan Ilmu Pendidikan</i>
+                </p>
+            </div>
+        </div>
+        <div class="kartu">
+            <div class="img-featured">
+                <img src="img/photo7.jpeg" alt="Alumni 7">
+                <p><strong>Kiandra Elvira Ramadhani</strong> <br>
+                    Lulusan 2018 <br>
+                    <i>Fakultas Ekonomi dan Bisnis</i>
+                </p>
+            </div>
+        </div>
+        <div class="kartu">
+            <div class="img-featured">
+                <img src="img/photo8.jpeg" alt="Alumni 8">
+                <p><strong>Seraphine Ayunda Kalista</strong> <br>
+                    Lulusan 2018 <br>
+                    <i>Fakultas Hukum</i>
+                </p>
+            </div>
+        </div>
+        <div class="kartu">
+            <div class="img-featured">
+                <img src="img/photo9.jpeg" alt="Alumni 9">
+                <p><strong>Cassandra Amara Laksita</strong> <br>
+                    Lulusan 2018 <br>
+                    <i>Fakultas Ilmu Komputer</i>
+                </p>
+            </div>
+        </div>
+        <div class="kartu">
+            <div class="img-featured">
+                <img src="img/photo10.jpeg" alt="Alumni 10">
+                <p><strong>Kayana Akasa Krida</strong> <br>
+                    Lulusan 2018 <br>
+                    <i>Fakultas Hukum</i> 
+                </p>
+            </div>
+        </div>
+        <div class="kartu">
+            <div class="img-featured">
+                <img src="img/photo11.jpeg" alt="Alumni 11">
+                <p><strong>Kaviendra Nandi Kuswara</strong> <br>
+                    Lulusan 2018 <br>
+                    <i>Fakultas Ilmu Komputer</i>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="modalimage" src="" alt="Selected Photo" style="width: auto; max-width: 80%; height: auto; max-height: 80%;">
+        </div>
+    </div>
+
+    <script src="jQuery/jquery-3.7.1.min.js"></script>
+    <script src="scriptugas.js"></script>
+
+    <main>
+        <section id="contact">
+            <h3>Stay in Touch, Be Well Connected</h3>
+            <p>Tetap Terhubung Bersama Kami</p>
+            <p>Email: <a href="mailto:alumni@universitasnama.ac.id">alumni@uniku.ac.id</a></p>
+            <p>Telepon: (0232) 873 696</p>
+          </section>
+    </main>
+    <footer>
+        <p>Alumnus &#169; 2018, Universitas Kuningan</p>
+    </footer>
+    
+</body>
+</html>
